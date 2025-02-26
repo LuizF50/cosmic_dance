@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatório Cósmico</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('./images/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Observatório Cósmico</h1>
+        <div class="observatory">
+            <div class="telescope"></div>
+            <div class="stars"></div>
+        </div>
+        <div class="input-section">
+            <input type="text" id="alignment-input" placeholder="Insira alinhamentos (ex: 3,6,9,12)">
+            <button onclick="analisarAlinhamento()">Analisar</button>
+        </div>
+        <div id="resultado" class="resultado"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

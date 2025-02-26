@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://pplx-res.cloudinary.com/image/upload/v1740562964/user_uploads/AguTUQtqRQdnNrx/imagem_2025-02-26_064243593.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Impede que barras de rolagem apareçam */
+}
+
+.container {
+    text-align: center;
+    position: relative; /* Necessário para posicionamento absoluto */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.observatory {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #00ffff;
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente */
+    z-index: 1; /* Garante que esteja acima do fundo */
+}
+
+.telescope {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60px;
+    height: 120px;
+    background: linear-gradient(90deg, #333, #666);
+    transform: translateX(-50%);
+    z-index: 2; /* Garante que esteja acima do fundo do observatório */
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffffff"/></svg>');
+    background-repeat: repeat;
+    animation: twinkle 5s linear infinite;
+    z-index: 0; /* Mantém as estrelas atrás do observatório */
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.input-section {
+    margin-bottom: 20px;
+    z-index: 3; /* Garante que esteja acima do observatório */
+    position: relative; /* Permite o uso de z-index */
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.7); /* Fundo mais opaco */
+    color: #333; /* Texto mais escuro */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Adiciona um brilho */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #00ffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Adiciona um brilho */
+}
+
+button:hover {
+    background: #00cccc;
+    transform: scale(1.05);
+}
+
+.resultado {
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0, 255, 255, 0.2);
+    border-radius: 10px;
+    display: inline-block;
+    z-index: 3;
+    position: relative;
+    min-width: 300px;
+    max-width: 80%;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.resultado p {
+    margin: 10px 0;
+}
